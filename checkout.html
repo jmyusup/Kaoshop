@@ -1,0 +1,222 @@
+<!--
+Nama  : Nurman Ramli Hanafi 
+NIM   : 10113257
+Kelas : ATOL-K
+-->
+
+
+<html>
+<head>
+<title>Checkout</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style2.css" rel='stylesheet' type='text/css' />
+<!--header-->
+<div class="header">
+	<div class="header-top">
+		<div class="container">
+				<div class="col-sm-4 logo animated wow fadeInLeft" data-wow-delay=".5s">
+					<h1><a href="index.html">KaoShop</a></h1>	
+				</div>
+			<div class="col-sm-4 world animated wow fadeInRight" data-wow-delay=".5s">
+					<div class="cart box_1">
+						<a href="checkout.html">
+						<h3> <div class="total">
+							<span class="simpleCart_total"></span></div>
+							<img src="images/cart.png" alt=""/></h3>
+						</a>
+
+					</div>
+			</div>
+			<div class="col-sm-2 number animated wow fadeInRight" data-wow-delay=".5s">
+					<span><i class="glyphicon glyphicon-phone"></i>085 596 234</span>
+					<p>Call me</p>
+				</div>
+
+			<div class="col-sm-2 search animated wow fadeInRight" data-wow-delay=".5s">		
+				<a class="play-icon popup-with-zoom-anim" href="#small-dialog"><i class="glyphicon glyphicon-search"> </i> </a>
+			</div>
+				
+				   <!-- Link -->
+						<ul class="nav navbar-nav nav_1">
+							
+							<li><a href="index.html" style=text-decoration:none >Home</a></li>
+							
+							
+							<li>
+
+							<a href="products.html" style=text-decoration:none >Products</a>
+							
+							</li>
+
+							<li>
+
+							<a href="checkout.html" style=text-decoration:none >Pemesanan</a>
+							
+							</li>
+
+							<li>
+							
+							<a href="account.html" style=text-decoration:none >Sign In</a>
+
+							</li>
+							
+							<li class="last">
+							
+							<a href="contact.html" style=text-decoration:none >Contact</a>
+
+							</li>
+						</ul>
+					 </div>
+				  
+				</nav>
+			</div>
+
+
+</head>
+
+<body>
+
+	<div class="container">
+	<div class="checkout">
+		<h3>Checkout</h3>
+		<div checkout-form>
+			<form action="tampilcekout.php" method="post">
+			<table >
+		  			<tr>
+						<th>Item</th>
+						<th>Qty</th>		
+						<th>Prices</th>
+						<th>Delivery details</th>
+						<th>Sub total</th>
+		  			</tr>
+
+		 				 <tr>
+							 <td class="ring-in"><a href="single.html" class="at-in"><img src="images/ce.jpg" class="img-responsive" alt=""></a>
+							    <div class="sed">
+							    <h5>Check-out Number 1</h5>
+								<p>(silahkan cek kembali pemesanan anda) </p>
+								</div>
+
+								<div class="clearfix"> </div></td>
+									<td class="check"><input type="text" name="number1" required pattern"[0-3].{0,5}"> </input></td>		
+										<td>Rp. 200.000</td>
+										<td>FREE SHIPPING</td>
+										<td>Rp. On Process</td>
+		 				</tr>
+
+
+		  				<tr>
+		  					<td class="ring-in"><a href="single.html" class="at-in"><img src="images/ce1.jpg" class="img-responsive" alt=""></a>
+								<div class="sed">
+								<h5>Check-out Number 2</h5>
+								<p>(silahkan cek kembali pemesanan anda) </p>
+								</div>
+
+								<div class="clearfix"> </div></td>
+									<td class="check"><input type="text" name="number2" required pattern"[0-3].{0,5}"> </input></td>		
+										<td>Rp. 300.000</td>
+										<td>FREE SHIPPING</td>
+										<td>Rp.On Process</td>
+		 			    </tr>
+
+
+		 			 	<tr>
+						  <td class="ring-in"><a href="single.html" class="at-in"><img src="images/ce2.jpg" class="img-responsive" alt=""></a>
+							  <div class="sed">
+							  <h5>Check-out Number 3</h5>
+								<p>(silahkan cek kembali pemesanan anda) </p>
+							  </div>
+
+							  <div class="clearfix"> </div></td>
+									<td class="check"><input type="text" name="number3" required pattern"[0-3].{0,5}"> </input></td>		
+										<td>Rp. 350.000</td>
+										<td>FREE SHIPPING</td>
+										<td>Rp.On Process</td>
+					   </tr>
+			</table>
+						 <input type="submit" value="PROCEED TO BUY" >
+						
+			</form> 
+			</div>
+
+		</div>
+	</div>
+
+	<div class="footer">
+	<div class="container">
+		<div class="footer-top">
+			<div class="col-md-6 top-footer animated wow fadeInLeft" data-wow-delay=".5s">
+				<h3>Follow Us On</h3>
+				<div class="social-icons">
+					<ul class="social">
+						<li><a href="#"><i></i></a> </li>
+						<li><a href="#"><i class="facebook"></i></a></li>	
+						<li><a href="#"><i class="google"></i> </a></li>
+						<li><a href="#"><i class="linked"></i> </a></li>						
+					</ul>
+						<div class="clearfix"></div>
+				 </div>
+			</div>
+			<div class="col-md-6 top-footer1 animated wow fadeInRight" data-wow-delay=".5s">
+				<h3>Newsletter</h3>
+					<form action="#" method="post">
+						<input type="text" name="email">
+						<input type="submit" value="SUBSCRIBE"
+						if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = test_input($_POST["email"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $emailErr = "Invalid email format"; 
+    }
+  }>
+
+					</form>
+			</div>
+			<div class="clearfix"> </div>	
+		</div>	
+	</div>
+		<div class="footer-bottom">
+		<div class="container">
+				<div class="col-md-3 footer-bottom-cate animated wow fadeInLeft" data-wow-delay=".5s">
+					<h6>Categories</h6>
+					<ul>
+						<li><a href="products.html">Produk</a></li>
+						<li><a href="men.html">Pria</a></li>
+						<li><a href="single.html">Wanita</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-bottom-cate animated wow fadeInLeft" data-wow-delay=".5s">
+					<h6>Feature Projects</h6>
+					<ul>
+						<li><a href="products.html">Produk</a></li>
+						<li><a href="men.html">Jaket</a></li>
+						<li><a href="single.html">Kaos</a></li>
+						<li><a href="men.html">Gamis</a></li>
+						<li><a href="products.html">Seragam</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-bottom-cate animated wow fadeInRight" data-wow-delay=".5s">
+					<h6>Top Brands</h6>
+					<ul>
+						<ul>
+						<li><a href="products.html">Casual</a></li>
+						<li><a href="men.html">Formal</a></li>
+						<li><a href="single.html">Muslim Cloth</a></li>
+							
+					</ul>
+				</div>
+				<div class="col-md-3 footer-bottom-cate cate-bottom animated wow fadeInRight">
+					<h6>Our Address</h6>
+					<ul>
+						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Address : Universitas Komputer Indonesia <span>Bandung.</span></li>
+						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email : <a href="mailto:info@example.com">info@example.com</a></li>
+						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone : +1234 567 567</li>
+					</ul>
+				</div>
+				
+	</div>
+</div>
+<!--footer-->
+</body>		
