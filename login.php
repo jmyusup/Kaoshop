@@ -33,7 +33,7 @@
 
 							<li>
 							
-							<a href="account.html" style=text-decoration:none >Sign In</a>
+							<a href=  "http://localhost/kaoshop/login.php" style=text-decoration:none> Sign In </a>
 
 							</li>
 							
@@ -90,15 +90,16 @@
 </head>
 <body>
 
-	<h1>ACCOUNT</h1>
+	<h1>LOGIN</h1>
 	<center>
-	<form action="login.php">
+
+	<form method="post" action="http://localhost/kaoshop/proses_login.php">
 		<br/>
 		<br/>
 		<label>EMAIL</label>
 		<input type="email" placeholder="Enter Email" name="email" required><br/><br/>
 		<label>PASSWORD</label>
-		<input type="password" placeholder="Enter Password" name="psw" required><br/><br/>
+		<input type="password" placeholder="Enter Password" name="password" required><br/><br/>
 		<label>
       		<input type="checkbox" checked="checked" name="remember"> Remember me
     	</label>
@@ -106,8 +107,8 @@
 
 	</form>
 
-	<form method="get" action="regist.html">
-    <button type="submit">REGISTER</button>
+	<a href="http://localhost/kaoshop/tambah.php">
+    <button type="submit">REGISTER</button></a>
 </form>
 
 
