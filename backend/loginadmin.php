@@ -3,7 +3,7 @@
 <head>
 	<title>KaoShop | Login</title>
 	<!--theme-style-->
-<link href="../../css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />	
 <!--header-->
 <div class="header">
 	<div class="header-top">
@@ -68,8 +68,7 @@
 		}
 
 		input[type=email], 
-		input[type=password],
-		input[type=text]  {
+		input[type=password] {
 			width: 500px;
     		padding: 12px 20px;
     		margin: 8px 0;
@@ -91,28 +90,27 @@
 </head>
 <body>
 
-	<h1>TAMBAH PRODUCT</h1>
+	<h1>ACCOUNT</h1>
 	<center>
-	<form method="post" action="http://localhost/kaoshop/backend/products/proses_tambah.php">
+
+	<form method="post" action="http://localhost/kaoshop/backend/proses_login_admin.php">
 		<br/>
 		<br/>
-
-		<label>Product Name</label>
-		<input type="text" placeholder="Product Name" name="name_product" required><br/><br/>
-
-		<label>Category Name</label>
-		<input type="text" placeholder="Category Name" name="category" required><br/><br/>
-
-		<label>Price</label>
-		<input type="text" placeholder="Price" name="price" required><br/><br/>
-
-		<label>Photo</label>
-		<input type="file" name="photo"><br/><br/>
-
-		<button type="submit" name="simpan">Simpan</button>
-		<button type="submit" name="batal" a href="http://localhost/kaoshop/backend/products/index.php">Batal</a>
+		<label>USERNAME</label>
+		<input type="username" placeholder="Enter username" name="username" required><br/><br/>
+		<label>PASSWORD</label>
+		<input type="password" placeholder="Enter Password" name="password" required><br/><br/>
+		<label>
+      		<input type="checkbox" checked="checked" name="remember"> Remember me
+    	</label>
+		<button type="submit">SIGN IN</button>
 
 	</form>
+
+	<form method="get" action="regist.html">
+    <button type="submit">REGISTER</button>
+</form>
+
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>KaoShop | Login</title>
+	<title>KaoShop | Register</title>
 	<!--theme-style-->
 <link href="../../css/style.css" rel="stylesheet" type="text/css" media="all" />	
 <!--header-->
@@ -69,7 +69,10 @@
 
 		input[type=email], 
 		input[type=password],
-		input[type=text]  {
+		input[type=fname],
+		input[type=lname],
+		input[type=gender],
+		input[type=pnumber] {
 			width: 500px;
     		padding: 12px 20px;
     		margin: 8px 0;
@@ -91,28 +94,48 @@
 </head>
 <body>
 
-	<h1>TAMBAH PRODUCT</h1>
-	<center>
-	<form method="post" action="http://localhost/kaoshop/backend/products/proses_tambah.php">
-		<br/>
-		<br/>
+	<h1>DATA REGISTER</h1>
+	<a href="http://localhost/kaoshop/backend/Register/tambah.php">Tambah</a>
+	<table border="1">
+		<tr>
+			<td>First Name</td>
+			<td>Last Name</td>
+			<td>Phone Number</td>
+			<td>Email</td>
+			<td>Action</td>
+		</tr>
 
-		<label>Product Name</label>
-		<input type="text" placeholder="Product Name" name="name_product" required><br/><br/>
+		<!-- data yang diambil dari database -->
 
-		<label>Category Name</label>
-		<input type="text" placeholder="Category Name" name="category" required><br/><br/>
+		<?php
+			include '../koneksi.php';
 
-		<label>Price</label>
-		<input type="text" placeholder="Price" name="price" required><br/><br/>
+			if ($ambilDataDB = mysqli_query($connect, 'SELECT * FROM user')) {
 
-		<label>Photo</label>
-		<input type="file" name="photo"><br/><br/>
+			    /* fetch associative array */
+			    while ($row = mysqli_fetch_assoc($ambilDataDB)) {
+		?>
+	    	<tr>
+				<td><?php echo $row['fname']?></td>
+				<td><?php echo $row['lname']?></td>
+				<td><?php echo $row['pnumber']?></td>
+				<td><?php echo $row['email']?></td>
+				<td>
+					<a href="http://localhost/kaoshop/backend/Register/ubah.php?id=<?php echo $row['id']?>">Ubah</a>
+					|
+					<a href="http://localhost/kaoshop/backend/Register/proses_hapus.php?id=<?php echo $row['id']?>">Hapus</a>
+				</td>
+			</tr>
 
-		<button type="submit" name="simpan">Simpan</button>
-		<button type="submit" name="batal" a href="http://localhost/kaoshop/backend/products/index.php">Batal</a>
+		<?php
+					
+			    }
+			}
 
-	</form>
+		?>
+
+	</table>
+
 
 </body>
 </html>

@@ -67,9 +67,8 @@
 			height: 30px;
 		}
 
-		input[type=email], 
-		input[type=password],
-		input[type=text]  {
+		input,
+		select {
 			width: 500px;
     		padding: 12px 20px;
     		margin: 8px 0;
@@ -93,26 +92,21 @@
 
 	<h1>TAMBAH PRODUCT</h1>
 	<center>
-	<form method="post" action="http://localhost/kaoshop/backend/products/proses_tambah.php">
+	<form method="post" action="http://localhost/kaoshop/backend/register/proses_tambah.php">
 		<br/>
 		<br/>
-
-		<label>Product Name</label>
-		<input type="text" placeholder="Product Name" name="name_product" required><br/><br/>
-
-		<label>Category Name</label>
-		<input type="text" placeholder="Category Name" name="category" required><br/><br/>
-
-		<label>Price</label>
-		<input type="text" placeholder="Price" name="price" required><br/><br/>
-
-		<label>Photo</label>
-		<input type="file" name="photo"><br/><br/>
-
+		<label>FIRST NAME</label>
+		<input type="text" placeholder="Enter Firstname" name="fname" required><br/><br/>
+		<label>LAST NAME</label>
+		<input type="text" placeholder="Enter Lastname" name="lname" required><br/><br/>
+		<label>PHONE NUMBER</label>
+		<input type="text" placeholder="Enter Phone Number" name="pnumber" required><br/><br/>
+		<label>EMAIL</label>
+		<input type="email" placeholder="Enter Email" name="email" required><br/><br/>
+		<label>PASSWORD</label>
+		<input type="password" placeholder="Enter Password" name="password" required><br/><br/>
 		<button type="submit" name="simpan">Simpan</button>
-		<button type="submit" name="batal" a href="http://localhost/kaoshop/backend/products/index.php">Batal</a>
-
+		<button type="submit" name="batal" a href="http://localhost/kaoshop/backend/register/index.php">Batal</a>
 	</form>
-
 </body>
 </html>

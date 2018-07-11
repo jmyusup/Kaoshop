@@ -68,8 +68,7 @@
 		}
 
 		input[type=email], 
-		input[type=password],
-		input[type=text]  {
+		input[type=password] {
 			width: 500px;
     		padding: 12px 20px;
     		margin: 8px 0;
@@ -91,26 +90,39 @@
 </head>
 <body>
 
-	<h1>TAMBAH PRODUCT</h1>
+	<h1>UBAH PRODUCT</h1>
 	<center>
-	<form method="post" action="http://localhost/kaoshop/backend/products/proses_tambah.php">
+	<form method="post" action="http://localhost/kaoshop/backend/register/proses_tambah.php">
 		<br/>
 		<br/>
 
-		<label>Product Name</label>
-		<input type="text" placeholder="Product Name" name="name_product" required><br/><br/>
+		<?php
+			include '../koneksi.php';
 
-		<label>Category Name</label>
-		<input type="text" placeholder="Category Name" name="category" required><br/><br/>
+			$id = $_GET['id'];
 
-		<label>Price</label>
-		<input type="text" placeholder="Price" name="price" required><br/><br/>
+			$ambilDataSesuaiID = mysqli_query($connect, "SELECT * FROM user WHERE id = '$id'");
 
-		<label>Photo</label>
-		<input type="file" name="photo"><br/><br/>
+			$data = mysqli_fetch_assoc($ambilDataSesuaiID);
+		?>
+		<label>FIRST NAME</label>
+		<input type="text" placeholder="Enter Firstname" name="fname" value="<?php echo $data['fname']; ?>" required><br/><br/>
+
+		<label>LAST NAME</label>
+		<input type="text" placeholder="Enter Lastname" name="lname" value="<?php echo $data['lname']; ?>" required><br/><br/>
+
+		<label>PHONE NUMBER</label>
+		<input type="text" placeholder="Enter Phone Number" name="pnumber" value="<?php echo $data['pnumber']; ?>" required><br/><br/>
+
+		<label>EMAIL</label>
+		<input type="email" placeholder="Enter Email" name="email" value="<?php echo $data['email']; ?>" required><br/><br/>
+		<label>PASSWORD</label>
+		<input type="password" placeholder="Enter Password" name="password" value="<?php echo $data['password']; ?>" required><br/><br/>
+
+		<input type="hidden" name="id" value="<?php echo $data['id']; ?>">
 
 		<button type="submit" name="simpan">Simpan</button>
-		<button type="submit" name="batal" a href="http://localhost/kaoshop/backend/products/index.php">Batal</a>
+		<button type="submit" name="simpan" a href="http://localhost/kaoshop/backend/register/index.php">Batal</a>
 
 	</form>
 

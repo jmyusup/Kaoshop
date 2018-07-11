@@ -67,9 +67,7 @@
 			height: 30px;
 		}
 
-		input[type=email], 
-		input[type=password],
-		input[type=text]  {
+		input {
 			width: 500px;
     		padding: 12px 20px;
     		margin: 8px 0;
@@ -91,26 +89,37 @@
 </head>
 <body>
 
-	<h1>TAMBAH PRODUCT</h1>
+	<h1>UBAH ADMIN</h1>
 	<center>
-	<form method="post" action="http://localhost/kaoshop/backend/products/proses_tambah.php">
+	<form method="post" action="http://localhost/kaoshop/backend/admin/proses_tambah.php">
 		<br/>
 		<br/>
 
-		<label>Product Name</label>
-		<input type="text" placeholder="Product Name" name="name_product" required><br/><br/>
+		<?php
+			include '../koneksi.php';
 
-		<label>Category Name</label>
-		<input type="text" placeholder="Category Name" name="category" required><br/><br/>
+			$id_admin = $_GET['id_admin'];
 
-		<label>Price</label>
-		<input type="text" placeholder="Price" name="price" required><br/><br/>
+			$ambilDataSesuaiID = mysqli_query($connect, "SELECT * FROM admin WHERE id_admin = '$id_admin'");
 
-		<label>Photo</label>
-		<input type="file" name="photo"><br/><br/>
+			$data = mysqli_fetch_assoc($ambilDataSesuaiID);
+		?>
+		<label>USERNAME</label>
+		<input type="text" placeholder="Enter username" name="username" value="<?php echo $data['username']; ?>" required><br/><br/>
+
+		<label>NAME</label>
+		<input type="text" placeholder="Enter Name" name="lname" value="<?php echo $data['nama']; ?>" required><br/><br/>
+
+
+		<label>EMAIL</label>
+		<input type="email" placeholder="Enter Email" name="email" value="<?php echo $data['email']; ?>" required><br/><br/>
+		<label>PASSWORD</label>
+		<input type="password" placeholder="Enter Password" name="password" value="<?php echo $data['password']; ?>" required><br/><br/>
+
+		<input type="hidden" name="id_admin" value="<?php echo $data['id_admin']; ?>">
 
 		<button type="submit" name="simpan">Simpan</button>
-		<button type="submit" name="batal" a href="http://localhost/kaoshop/backend/products/index.php">Batal</a>
+		<button type="submit" name="simpan" a href="http://localhost/kaoshop/backend/user/index.php">Batal</a>
 
 	</form>
 
