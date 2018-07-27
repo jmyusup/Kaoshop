@@ -9,7 +9,7 @@
 	<div class="header-top">
 		<div class="container">
 				<div class="col-sm-4 logo animated wow fadeInLeft" data-wow-delay=".5s">
-					<h1><a href="index.html">KaoShop</a></h1>	
+					<h1><a href="http://localhost/kaoshop/backend/home.php">KaoShop</a></h1>	
 				</div>
 			
 			

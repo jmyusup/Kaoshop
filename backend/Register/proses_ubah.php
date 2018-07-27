@@ -13,7 +13,7 @@ if(isset($_POST['simpan'])){
 	$password = md5($_POST['password']);
 
 
-	$eksekusi = mysqli_query($connect, "UPDATE user fname='$fname', lname='$lname', pnumber='$pnumber', email='$email', password='$password' WHERE id='$id'");
+	$eksekusi = mysqli_query($connect, "UPDATE user SET fname='$fname', lname='$lname', pnumber='$pnumber', email='$email', password='$password' WHERE id='$id'");
 
 	if($eksekusi){
 	header("Location: http://localhost/kaoshop/backend/register/index.php");

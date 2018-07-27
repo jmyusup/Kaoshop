@@ -5,10 +5,10 @@ if(isset($_POST['simpan'])){
 	}
 
 
-	$username = ($_POST['username']);
-	$nama = ($_POST['nama']);
-	$email = ($_POST['email']);
-	$password = md5($_POST['password']);
+	$username = addslashes(strip_tags($_POST['username']));
+	$nama = addslashes(strip_tags($_POST['nama']));
+	$email = addslashes(strip_tags($_POST['email']));
+	$password = md5(addslashes(strip_tags($_POST['password'])));
 
 
 

@@ -1,10 +1,10 @@
 <?php
 include '../koneksi.php';
 
-$id_product = $_POST['id_product'];
-$product_name = $_POST['name_product'];
-$category = $_POST['category'];
-$price = $_POST['price'];
+$id_product = addslashes(strip_tags($_POST['id_product']));
+$product_name = addslashes(strip_tags($_POST['name_product']));
+$category = addslashes(strip_tags($_POST['category']));
+$price = addslashes(strip_tags($_POST['price']));
 
 $eksekusi = mysqli_query($connect, "UPDATE product SET name_product = '$product_name', category = '$category', price = '$price' WHERE id_product = '$id_product'");
 

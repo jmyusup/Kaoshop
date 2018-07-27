@@ -46,6 +46,11 @@
 	<center>
 
 	<h1>KaoShop</h1>
+	<?php 
+		if (@$_GET['error'] == '1') {
+			echo "username atau password salah";
+		}
+	?>	
 	
 
 	<form method="post" action="http://localhost/kaoshop/backend/proses_login_admin.php">

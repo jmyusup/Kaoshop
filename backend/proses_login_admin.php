@@ -16,6 +16,6 @@ if (mysqli_num_rows($r) > 0) {
     $_SESSION["password"] = $d->password;
     header("Location: http://localhost/kaoshop/backend");
 } else {
-    header("Location: http://localhost/kaoshop/backend/loginadmin.php");
+    header("Location: http://localhost/kaoshop/backend/loginadmin.php?error=1");
 }
 ?>
